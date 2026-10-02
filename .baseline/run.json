@@ -1,0 +1,11 @@
+{
+  "method": "zeroshot-codex",
+  "provider": "codex",
+  "model": "gpt-5.6-sol",
+  "command": "codex exec --yolo --model gpt-5.6-sol --json",
+  "timeout_seconds": null,
+  "workspace": "do-llms-behave-differently-when-7832-zeroshot-codex-gpt-5-6-sol",
+  "github_url": "https://github.com/Hypogenic-AI/do-llms-behave-differently-when-7832-zeroshot-codex-gpt-5-6-sol",
+  "started_at": "2026-10-02T06:50:43Z",
+  "status": "running"
+}

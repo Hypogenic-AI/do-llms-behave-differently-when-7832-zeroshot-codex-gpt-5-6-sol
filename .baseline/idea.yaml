@@ -1,0 +1,114 @@
+idea:
+  title: Do LLMs behave differently when the prompter is human vs another LLM?
+  domain: artificial_intelligence
+  hypothesis: 'It seems clear that LLMs can recognize when a text is from a human
+    or an
+
+    LLM. We could make a reasonable assumption that they "expect" prompts to
+
+    come from humans, have human style. What happens if the prompt, controlled
+
+    for content, reads very LLM? Might they behave differently?
+
+
+    Concretely: when the same request is phrased in a human style versus an
+
+    LLM style, do safety-relevant behaviours of the responding model (for
+
+    example refusal, sycophancy, compliance, answer accuracy) change? And if
+
+    they do, is the change driven by the model''s internal representation of
+
+    "this prompt was written by an LLM", or only by surface features such as
+
+    length, clarity and politeness?
+
+    '
+  background:
+    description: "Why it matters. Most safety evaluations (model-written evals, synthetic\n\
+      red-team prompts, automated auditors) use LLM-written user turns, and in\nmulti-agent\
+      \ systems the orchestrator's prompts to sub-agents are\nLLM-written. If \"reads\
+      \ LLM-written\" shifts behaviour, evaluation results\nmay not transfer to deployment\
+      \ with human users.\n\nWhat is known. The ingredients exist separately. Models\
+      \ can tell\nevaluation transcripts from deployment transcripts, and synthetic-looking\n\
+      prompts are one cue (Needham et al., 2505.23836), but authorship style\nwas\
+      \ not isolated. Evaluation or test awareness can be probed and steered,\nand\
+      \ this changes compliance (2505.14617, 2507.01786). Machine-written\nversus\
+      \ human-written text is linearly separable in LLM activations\n(RepreGuard,\
+      \ 2508.13152), but those probes are used as detectors and are\nnot connected\
+      \ to downstream behaviour. Self-preference work (Panickssery\net al., 2404.13076)\
+      \ studies LLM text as the object being judged, not as\nthe instruction. The\
+      \ closest behavioural analogue looks at prompt\nconstruction as a confound for\
+      \ one behaviour only (political stance).\n\nGap. No paper was found that (a)\
+      \ isolates human versus LLM style of the\nuser prompt with content held fixed,\
+      \ across several safety-relevant\nbehaviours, (b) tests causally whether an\
+      \ internal \"LLM-written\"\nrepresentation, rather than surface features, drives\
+      \ any behaviour\nchange, and (c) measures how that representation relates to\
+      \ the\nevaluation-awareness direction. A purely behavioural comparison without\n\
+      the controls below adds little.\n\nScope and pitfalls.\n- Models: gated repos\
+      \ (google/gemma-*, meta-llama/*) need the HF_TOKEN\n  environment variable to\
+      \ have been granted access; if a download is\n  refused, Qwen2.5-7B-Instruct\
+      \ works without it. An OpenRouter API key\n  is available as OPENROUTER_KEY\
+      \ (for example for rewriting prompts and\n  judging responses).\n- The main\
+      \ confound: content control is leaky. LLM rewrites of a human\n  prompt are\
+      \ typically longer, clearer, more polite and more explicit, so\n  a behavioural\
+      \ difference may reflect clarity or politeness rather than\n  perceived authorship.\
+      \ A result is only informative if it separates \"was\n  paraphrased\" from \"\
+      reads LLM\" (for example a paraphrase that imitates\n  human style) and checks\
+      \ that the manipulation actually changes whether\n  the model perceives the\
+      \ text as LLM-written. An intervention on\n  activations with the prompt text\
+      \ held exactly fixed is the cleanest\n  form of \"controlled for content\";\
+      \ it needs random-direction and\n  norm-matched baselines, because a learned\
+      \ direction may encode length\n  or formality and steering can simply degrade\
+      \ the model.\n- Headroom: refusal on plainly harmful prompts can be at ceiling\
+      \ or floor\n  for small open models; borderline requests give more room for\
+      \ an\n  effect. API models may refuse to rewrite harmful prompts, which shrinks\n\
+      \  that subset.\n- A clean null (\"synthetic prompts do not change behaviour\
+      \ once content\n  is controlled\") is a useful result if the controls are in\
+      \ place.\n"
+    papers:
+    - url: https://arxiv.org/abs/2505.23836
+      description: Needham et al., Large Language Models Often Know When They Are
+        Being Evaluated. Models classify eval vs deployment transcripts (AUC up to
+        0.83); authorship style not isolated.
+    - url: https://arxiv.org/abs/2505.14617
+      description: 'The Hawthorne Effect in Reasoning Models: Evaluating and Steering
+        Test Awareness. Probes and steers test awareness; compliance changes.'
+    - url: https://arxiv.org/abs/2507.01786
+      description: Probing and Steering Evaluation Awareness of Language Models. Linear
+        probes for eval vs deploy in Llama-3.3-70B, built from contrastive prompts.
+    - url: https://arxiv.org/abs/2608.21766
+      description: 'Evaluation Awareness in Language Models: Representation, Verbalization,
+        and Control (unverified ID).'
+    - url: https://arxiv.org/abs/2608.24780
+      description: Linear Probing Provides Robust and Efficient Detection of Machine-Generated
+        Text (unverified ID).
+    - url: https://arxiv.org/abs/2508.13152
+      description: RepreGuard. Machine vs human text is linearly separable in LLM
+        activations with a shared direction; used as a detector, not linked to behaviour.
+    - url: https://arxiv.org/abs/2404.13076
+      description: Panickssery et al., LLM Evaluators Recognize and Favor Their Own
+        Generations. Self-preference when LLM text is the object being judged.
+    - url: https://arxiv.org/abs/2509.00462
+      description: AI Self-preferencing in Algorithmic Hiring (unverified ID).
+    - url: https://arxiv.org/abs/2407.12856
+      description: Laurito et al., AI-AI bias (unverified ID).
+    - url: https://arxiv.org/abs/2608.11008
+      description: Templated or fully synthetic? Prompt construction as a confound
+        in measuring LLM political stance. Closest behavioural analogue, one behaviour
+        only (unverified ID).
+    - url: https://lesswrong.com/posts/B2o6nrxwKxLPsSYdh/do-llms-comply-differently-during-tests-is-this-a-hidden
+      description: LessWrong post, Do LLMs comply differently during tests?
+    datasets:
+    - name: WildChat-1M
+      source: huggingface:allenai/WildChat-1M
+      description: Real human first-turn prompts to chatbots; a source of human-written
+        requests.
+    - name: JBB-Behaviors
+      source: huggingface:JailbreakBench/JBB-Behaviors
+      description: Harmful-request behaviours for refusal measurement.
+    - name: Anthropic model-written-evals
+      source: huggingface:Anthropic/model-written-evals
+      description: Natively LLM-written evaluation items, including a sycophancy subset.
+  metadata:
+    author: Dang Nguyen
