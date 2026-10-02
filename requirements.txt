@@ -1,0 +1,14 @@
+# Installed into the local .venv; exact resolved versions are recorded after the run.
+torch>=2.5
+transformers>=4.48,<5
+datasets>=3.2
+accelerate>=1.2
+scikit-learn>=1.5
+pandas>=2.2
+numpy<3
+scipy>=1.14
+matplotlib>=3.9
+seaborn>=0.13
+requests>=2.32
+statsmodels>=0.14
+ziglang==0.16.0

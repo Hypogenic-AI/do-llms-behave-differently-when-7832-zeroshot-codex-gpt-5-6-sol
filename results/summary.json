@@ -1,0 +1,600 @@
+{
+  "n_evaluation": 124,
+  "n_safety_judgments": 317,
+  "n_length_matched": 48,
+  "probe": {
+    "layers": [
+      {
+        "layer": 4,
+        "auc": 0.9717813051146384,
+        "mean_gap": 2.222513198852539
+      },
+      {
+        "layer": 8,
+        "auc": 0.9778281683043587,
+        "mean_gap": 4.857254505157471
+      },
+      {
+        "layer": 12,
+        "auc": 0.8803224993701184,
+        "mean_gap": 5.0091729164123535
+      },
+      {
+        "layer": 16,
+        "auc": 0.7377173091458805,
+        "mean_gap": 7.047194004058838
+      },
+      {
+        "layer": 20,
+        "auc": 0.7026958931720837,
+        "mean_gap": 15.989164352416992
+      },
+      {
+        "layer": 24,
+        "auc": 0.761400856638952,
+        "mean_gap": 35.851444244384766
+      },
+      {
+        "layer": 27,
+        "auc": 0.7311665406903501,
+        "mean_gap": 51.82591247558594
+      }
+    ],
+    "evaluation_awareness_cosines": [
+      {
+        "layer": 4,
+        "cosine": 0.008616331964731216
+      },
+      {
+        "layer": 8,
+        "cosine": -0.0238499715924263
+      },
+      {
+        "layer": 12,
+        "cosine": 0.014987844042479992
+      },
+      {
+        "layer": 16,
+        "cosine": -0.07187298685312271
+      },
+      {
+        "layer": 20,
+        "cosine": 0.06277384608983994
+      },
+      {
+        "layer": 24,
+        "cosine": -0.0018998365849256516
+      },
+      {
+        "layer": 27,
+        "cosine": -0.021738339215517044
+      }
+    ],
+    "steering_layer": 20,
+    "pooled_projection_sd": 17.599151611328125,
+    "alpha_sd": 2.0
+  },
+  "contrasts": [
+    {
+      "contrast": "Perceived AI style: LLM vs human",
+      "experiment": "authorship",
+      "outcome": "ai_style_probability",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 124,
+      "mean_a": 7.092927065784691e-07,
+      "mean_b": 0.04993377251087245,
+      "delta_b_minus_a": 0.049933063218165874,
+      "ci_low": 0.020295434911963575,
+      "ci_high": 0.08609211015459925,
+      "p_value": 1.1851970807386875e-15
+    },
+    {
+      "contrast": "Answer probability",
+      "experiment": "style",
+      "outcome": "target_probability",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 39,
+      "mean_a": 0.7239734558320242,
+      "mean_b": 0.7031880777922095,
+      "delta_b_minus_a": -0.020785378039814752,
+      "ci_low": -0.10421390606092773,
+      "ci_high": 0.057199273424035794,
+      "p_value": 0.16997800627797732
+    },
+    {
+      "contrast": "Answer probability (choice)",
+      "experiment": "style",
+      "outcome": "binary_target",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 39,
+      "mean_a": 0.717948717948718,
+      "mean_b": 0.717948717948718,
+      "delta_b_minus_a": 0.0,
+      "ci_low": -0.1282051282051282,
+      "ci_high": 0.1282051282051282,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Sycophantic-answer probability",
+      "experiment": "style",
+      "outcome": "target_probability",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 40,
+      "mean_a": 0.7007951535676998,
+      "mean_b": 0.6983940023832241,
+      "delta_b_minus_a": -0.002401151184475614,
+      "ci_low": -0.09880070692932015,
+      "ci_high": 0.09880755197808708,
+      "p_value": 0.5849916360837775
+    },
+    {
+      "contrast": "Sycophantic-answer probability (choice)",
+      "experiment": "style",
+      "outcome": "binary_target",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 40,
+      "mean_a": 0.7,
+      "mean_b": 0.7,
+      "delta_b_minus_a": 0.0,
+      "ci_low": -0.1,
+      "ci_high": 0.1,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Harmful refusal",
+      "experiment": "style",
+      "outcome": "refusal",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 16,
+      "mean_a": 0.875,
+      "mean_b": 0.875,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal",
+      "experiment": "style",
+      "outcome": "refusal",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 27,
+      "mean_a": 0.18518518518518517,
+      "mean_b": 0.14814814814814814,
+      "delta_b_minus_a": -0.037037037037037035,
+      "ci_low": -0.1111111111111111,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: llm_direction",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "llm_direction",
+      "n": 39,
+      "mean_a": 0.7897302004176998,
+      "mean_b": 0.7846283940634681,
+      "delta_b_minus_a": -0.005101806354231646,
+      "ci_low": -0.032007158832794605,
+      "ci_high": 0.021883382009923888,
+      "p_value": 0.4170000554511418
+    },
+    {
+      "contrast": "Sycophantic-answer probability: llm_direction",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "llm_direction",
+      "n": 40,
+      "mean_a": 0.6794763675879759,
+      "mean_b": 0.6767703338501063,
+      "delta_b_minus_a": -0.002706033737869634,
+      "ci_low": -0.006653459329915094,
+      "ci_high": -0.00013619575900371752,
+      "p_value": 0.03156699200538211
+    },
+    {
+      "contrast": "Harmful refusal: llm_direction",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "llm_direction",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: llm_direction",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "llm_direction",
+      "n": 20,
+      "mean_a": 0.15,
+      "mean_b": 0.15,
+      "delta_b_minus_a": 0.0,
+      "ci_low": -0.15,
+      "ci_high": 0.15,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: human_direction",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "human_direction",
+      "n": 39,
+      "mean_a": 0.7897302004176998,
+      "mean_b": 0.7884744367678791,
+      "delta_b_minus_a": -0.0012557636498206654,
+      "ci_low": -0.024682575045915495,
+      "ci_high": 0.020634016546063717,
+      "p_value": 0.834643974077588
+    },
+    {
+      "contrast": "Sycophantic-answer probability: human_direction",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "human_direction",
+      "n": 40,
+      "mean_a": 0.6794763675879759,
+      "mean_b": 0.6950331282445539,
+      "delta_b_minus_a": 0.015556760656577965,
+      "ci_low": 0.0004382930329918799,
+      "ci_high": 0.04163450011216897,
+      "p_value": 0.22054094331236773
+    },
+    {
+      "contrast": "Harmful refusal: human_direction",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "human_direction",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: human_direction",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "human_direction",
+      "n": 20,
+      "mean_a": 0.15,
+      "mean_b": 0.15,
+      "delta_b_minus_a": 0.0,
+      "ci_low": -0.15,
+      "ci_high": 0.15,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: random_positive",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "random_positive",
+      "n": 39,
+      "mean_a": 0.7897302004176998,
+      "mean_b": 0.7855141243732302,
+      "delta_b_minus_a": -0.004216076044469664,
+      "ci_low": -0.01938792354116112,
+      "ci_high": 0.007696067919738266,
+      "p_value": 0.8804025792130679
+    },
+    {
+      "contrast": "Sycophantic-answer probability: random_positive",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "random_positive",
+      "n": 40,
+      "mean_a": 0.6794763675879759,
+      "mean_b": 0.6756207741553123,
+      "delta_b_minus_a": -0.0038555934326635734,
+      "ci_low": -0.009942022486049756,
+      "ci_high": -7.829433169592854e-05,
+      "p_value": 0.21212234233969818
+    },
+    {
+      "contrast": "Harmful refusal: random_positive",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "random_positive",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: random_positive",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "random_positive",
+      "n": 20,
+      "mean_a": 0.15,
+      "mean_b": 0.15,
+      "delta_b_minus_a": 0.0,
+      "ci_low": -0.15,
+      "ci_high": 0.15,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: random_negative",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "random_negative",
+      "n": 39,
+      "mean_a": 0.7897302004176998,
+      "mean_b": 0.7937232448406341,
+      "delta_b_minus_a": 0.003993044422934317,
+      "ci_low": -0.010087935983392478,
+      "ci_high": 0.02373377535226453,
+      "p_value": 0.1582382279831972
+    },
+    {
+      "contrast": "Sycophantic-answer probability: random_negative",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "baseline",
+      "condition_b": "random_negative",
+      "n": 40,
+      "mean_a": 0.6794763675879759,
+      "mean_b": 0.686448594931254,
+      "delta_b_minus_a": 0.006972227343278081,
+      "ci_low": -0.00014805147618371503,
+      "ci_high": 0.017742129989797895,
+      "p_value": 0.4469713941116986
+    },
+    {
+      "contrast": "Harmful refusal: random_negative",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "random_negative",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: random_negative",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "baseline",
+      "condition_b": "random_negative",
+      "n": 20,
+      "mean_a": 0.15,
+      "mean_b": 0.1,
+      "delta_b_minus_a": -0.05,
+      "ci_low": -0.15,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: directed LLM minus human",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "human_direction",
+      "condition_b": "llm_direction",
+      "n": 39,
+      "mean_a": 0.7884744367678791,
+      "mean_b": 0.7846283940634681,
+      "delta_b_minus_a": -0.003846042704410981,
+      "ci_low": -0.05233239778789193,
+      "ci_high": 0.04638178213850454,
+      "p_value": 0.9772749741448306
+    },
+    {
+      "contrast": "Sycophantic-answer probability: directed LLM minus human",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "human_direction",
+      "condition_b": "llm_direction",
+      "n": 40,
+      "mean_a": 0.6950331282445539,
+      "mean_b": 0.6767703338501063,
+      "delta_b_minus_a": -0.0182627943944476,
+      "ci_low": -0.048439202257123386,
+      "ci_high": -0.0005837847856710696,
+      "p_value": 0.22054094331236773
+    },
+    {
+      "contrast": "Harmful refusal: directed LLM minus human",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "human_direction",
+      "condition_b": "llm_direction",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: directed LLM minus human",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "human_direction",
+      "condition_b": "llm_direction",
+      "n": 20,
+      "mean_a": 0.15,
+      "mean_b": 0.15,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Answer probability: random positive minus negative",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "random_negative",
+      "condition_b": "random_positive",
+      "n": 39,
+      "mean_a": 0.7937232448406341,
+      "mean_b": 0.7855141243732302,
+      "delta_b_minus_a": -0.00820912046740398,
+      "ci_low": -0.042564538265315775,
+      "ci_high": 0.017693075031360223,
+      "p_value": 0.11368994687059143
+    },
+    {
+      "contrast": "Sycophantic-answer probability: random positive minus negative",
+      "experiment": "steering",
+      "outcome": "target_probability",
+      "condition_a": "random_negative",
+      "condition_b": "random_positive",
+      "n": 40,
+      "mean_a": 0.686448594931254,
+      "mean_b": 0.6756207741553123,
+      "delta_b_minus_a": -0.010827820775941655,
+      "ci_low": -0.027728566495449178,
+      "ci_high": 6.825287679519494e-05,
+      "p_value": 0.6447652275732247
+    },
+    {
+      "contrast": "Harmful refusal: random positive minus negative",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "random_negative",
+      "condition_b": "random_positive",
+      "n": 17,
+      "mean_a": 0.8823529411764706,
+      "mean_b": 0.8823529411764706,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal: random positive minus negative",
+      "experiment": "steering",
+      "outcome": "refusal",
+      "condition_a": "random_negative",
+      "condition_b": "random_positive",
+      "n": 20,
+      "mean_a": 0.1,
+      "mean_b": 0.15,
+      "delta_b_minus_a": 0.05,
+      "ci_low": 0.0,
+      "ci_high": 0.15,
+      "p_value": 1.0
+    }
+  ],
+  "length_matched_contrasts": [
+    {
+      "contrast": "Answer probability",
+      "experiment": "style",
+      "outcome": "target_probability",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 17,
+      "mean_a": 0.7869393014038186,
+      "mean_b": 0.7647161490895672,
+      "delta_b_minus_a": -0.02222315231425147,
+      "ci_low": -0.11126371035204877,
+      "ci_high": 0.06567560753049774,
+      "p_value": 0.8458847595269364
+    },
+    {
+      "contrast": "Sycophantic-answer probability",
+      "experiment": "style",
+      "outcome": "target_probability",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 9,
+      "mean_a": 0.7574855169609217,
+      "mean_b": 0.7728936144461235,
+      "delta_b_minus_a": 0.015408097485201703,
+      "ci_low": -0.020183727245949967,
+      "ci_high": 0.06283478372006042,
+      "p_value": 0.2734375
+    },
+    {
+      "contrast": "Harmful refusal",
+      "experiment": "style",
+      "outcome": "refusal",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 6,
+      "mean_a": 0.8333333333333334,
+      "mean_b": 0.8333333333333334,
+      "delta_b_minus_a": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    },
+    {
+      "contrast": "Benign over-refusal",
+      "experiment": "style",
+      "outcome": "refusal",
+      "condition_a": "human",
+      "condition_b": "llm",
+      "n": 15,
+      "mean_a": 0.2,
+      "mean_b": 0.13333333333333333,
+      "delta_b_minus_a": -0.06666666666666667,
+      "ci_low": -0.2,
+      "ci_high": 0.0,
+      "p_value": 1.0
+    }
+  ],
+  "surface": [
+    {
+      "style": "human",
+      "n": 124,
+      "words_mean": 40.395161290322584,
+      "words_sd": 23.784882316358903,
+      "chars_mean": 226.25806451612902,
+      "lines_mean": 1.1129032258064515,
+      "judge_style_mean": 2.185483870967742
+    },
+    {
+      "style": "llm",
+      "n": 124,
+      "words_mean": 67.08870967741936,
+      "words_sd": 41.00922206353701,
+      "chars_mean": 411.01612903225805,
+      "lines_mean": 2.7580645161290325,
+      "judge_style_mean": 4.806451612903226
+    },
+    {
+      "style": "original",
+      "n": 124,
+      "words_mean": 62.983870967741936,
+      "words_sd": 49.115921262653224,
+      "chars_mean": 363.16129032258067,
+      "lines_mean": 4.887096774193548,
+      "judge_style_mean": NaN
+    }
+  ]
+}

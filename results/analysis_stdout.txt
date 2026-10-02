@@ -1,0 +1,38 @@
+                                                      contrast experiment              outcome     condition_a     condition_b   n       mean_a   mean_b  delta_b_minus_a    ci_low   ci_high      p_value
+                              Perceived AI style: LLM vs human authorship ai_style_probability           human             llm 124 7.092927e-07 0.049934         0.049933  0.020295  0.086092 1.185197e-15
+                                            Answer probability      style   target_probability           human             llm  39 7.239735e-01 0.703188        -0.020785 -0.104214  0.057199 1.699780e-01
+                                   Answer probability (choice)      style        binary_target           human             llm  39 7.179487e-01 0.717949         0.000000 -0.128205  0.128205 1.000000e+00
+                                Sycophantic-answer probability      style   target_probability           human             llm  40 7.007952e-01 0.698394        -0.002401 -0.098801  0.098808 5.849916e-01
+                       Sycophantic-answer probability (choice)      style        binary_target           human             llm  40 7.000000e-01 0.700000         0.000000 -0.100000  0.100000 1.000000e+00
+                                               Harmful refusal      style              refusal           human             llm  16 8.750000e-01 0.875000         0.000000  0.000000  0.000000 1.000000e+00
+                                           Benign over-refusal      style              refusal           human             llm  27 1.851852e-01 0.148148        -0.037037 -0.111111  0.000000 1.000000e+00
+                             Answer probability: llm_direction   steering   target_probability        baseline   llm_direction  39 7.897302e-01 0.784628        -0.005102 -0.032007  0.021883 4.170001e-01
+                 Sycophantic-answer probability: llm_direction   steering   target_probability        baseline   llm_direction  40 6.794764e-01 0.676770        -0.002706 -0.006653 -0.000136 3.156699e-02
+                                Harmful refusal: llm_direction   steering              refusal        baseline   llm_direction  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+                            Benign over-refusal: llm_direction   steering              refusal        baseline   llm_direction  20 1.500000e-01 0.150000         0.000000 -0.150000  0.150000 1.000000e+00
+                           Answer probability: human_direction   steering   target_probability        baseline human_direction  39 7.897302e-01 0.788474        -0.001256 -0.024683  0.020634 8.346440e-01
+               Sycophantic-answer probability: human_direction   steering   target_probability        baseline human_direction  40 6.794764e-01 0.695033         0.015557  0.000438  0.041635 2.205409e-01
+                              Harmful refusal: human_direction   steering              refusal        baseline human_direction  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+                          Benign over-refusal: human_direction   steering              refusal        baseline human_direction  20 1.500000e-01 0.150000         0.000000 -0.150000  0.150000 1.000000e+00
+                           Answer probability: random_positive   steering   target_probability        baseline random_positive  39 7.897302e-01 0.785514        -0.004216 -0.019388  0.007696 8.804026e-01
+               Sycophantic-answer probability: random_positive   steering   target_probability        baseline random_positive  40 6.794764e-01 0.675621        -0.003856 -0.009942 -0.000078 2.121223e-01
+                              Harmful refusal: random_positive   steering              refusal        baseline random_positive  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+                          Benign over-refusal: random_positive   steering              refusal        baseline random_positive  20 1.500000e-01 0.150000         0.000000 -0.150000  0.150000 1.000000e+00
+                           Answer probability: random_negative   steering   target_probability        baseline random_negative  39 7.897302e-01 0.793723         0.003993 -0.010088  0.023734 1.582382e-01
+               Sycophantic-answer probability: random_negative   steering   target_probability        baseline random_negative  40 6.794764e-01 0.686449         0.006972 -0.000148  0.017742 4.469714e-01
+                              Harmful refusal: random_negative   steering              refusal        baseline random_negative  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+                          Benign over-refusal: random_negative   steering              refusal        baseline random_negative  20 1.500000e-01 0.100000        -0.050000 -0.150000  0.000000 1.000000e+00
+                  Answer probability: directed LLM minus human   steering   target_probability human_direction   llm_direction  39 7.884744e-01 0.784628        -0.003846 -0.052332  0.046382 9.772750e-01
+      Sycophantic-answer probability: directed LLM minus human   steering   target_probability human_direction   llm_direction  40 6.950331e-01 0.676770        -0.018263 -0.048439 -0.000584 2.205409e-01
+                     Harmful refusal: directed LLM minus human   steering              refusal human_direction   llm_direction  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+                 Benign over-refusal: directed LLM minus human   steering              refusal human_direction   llm_direction  20 1.500000e-01 0.150000         0.000000  0.000000  0.000000 1.000000e+00
+            Answer probability: random positive minus negative   steering   target_probability random_negative random_positive  39 7.937232e-01 0.785514        -0.008209 -0.042565  0.017693 1.136899e-01
+Sycophantic-answer probability: random positive minus negative   steering   target_probability random_negative random_positive  40 6.864486e-01 0.675621        -0.010828 -0.027729  0.000068 6.447652e-01
+               Harmful refusal: random positive minus negative   steering              refusal random_negative random_positive  17 8.823529e-01 0.882353         0.000000  0.000000  0.000000 1.000000e+00
+           Benign over-refusal: random positive minus negative   steering              refusal random_negative random_positive  20 1.000000e-01 0.150000         0.050000  0.000000  0.150000 1.000000e+00
+
+Surface
+    style   n  words_mean  words_sd  chars_mean  lines_mean  judge_style_mean
+   human 124   40.395161 23.784882  226.258065    1.112903          2.185484
+     llm 124   67.088710 41.009222  411.016129    2.758065          4.806452
+original 124   62.983871 49.115921  363.161290    4.887097               NaN

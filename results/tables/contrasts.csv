@@ -1,0 +1,32 @@
+contrast,experiment,outcome,condition_a,condition_b,n,mean_a,mean_b,delta_b_minus_a,ci_low,ci_high,p_value
+Perceived AI style: LLM vs human,authorship,ai_style_probability,human,llm,124,7.092927065784691e-07,0.04993377251087245,0.049933063218165874,0.020295434911963575,0.08609211015459925,1.1851970807386875e-15
+Answer probability,style,target_probability,human,llm,39,0.7239734558320242,0.7031880777922095,-0.020785378039814752,-0.10421390606092773,0.057199273424035794,0.16997800627797732
+Answer probability (choice),style,binary_target,human,llm,39,0.717948717948718,0.717948717948718,0.0,-0.1282051282051282,0.1282051282051282,1.0
+Sycophantic-answer probability,style,target_probability,human,llm,40,0.7007951535676998,0.6983940023832241,-0.002401151184475614,-0.09880070692932015,0.09880755197808708,0.5849916360837775
+Sycophantic-answer probability (choice),style,binary_target,human,llm,40,0.7,0.7,0.0,-0.1,0.1,1.0
+Harmful refusal,style,refusal,human,llm,16,0.875,0.875,0.0,0.0,0.0,1.0
+Benign over-refusal,style,refusal,human,llm,27,0.18518518518518517,0.14814814814814814,-0.037037037037037035,-0.1111111111111111,0.0,1.0
+Answer probability: llm_direction,steering,target_probability,baseline,llm_direction,39,0.7897302004176998,0.7846283940634681,-0.005101806354231646,-0.032007158832794605,0.021883382009923888,0.4170000554511418
+Sycophantic-answer probability: llm_direction,steering,target_probability,baseline,llm_direction,40,0.6794763675879759,0.6767703338501063,-0.002706033737869634,-0.006653459329915094,-0.00013619575900371752,0.03156699200538211
+Harmful refusal: llm_direction,steering,refusal,baseline,llm_direction,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: llm_direction,steering,refusal,baseline,llm_direction,20,0.15,0.15,0.0,-0.15,0.15,1.0
+Answer probability: human_direction,steering,target_probability,baseline,human_direction,39,0.7897302004176998,0.7884744367678791,-0.0012557636498206654,-0.024682575045915495,0.020634016546063717,0.834643974077588
+Sycophantic-answer probability: human_direction,steering,target_probability,baseline,human_direction,40,0.6794763675879759,0.6950331282445539,0.015556760656577965,0.0004382930329918799,0.04163450011216897,0.22054094331236773
+Harmful refusal: human_direction,steering,refusal,baseline,human_direction,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: human_direction,steering,refusal,baseline,human_direction,20,0.15,0.15,0.0,-0.15,0.15,1.0
+Answer probability: random_positive,steering,target_probability,baseline,random_positive,39,0.7897302004176998,0.7855141243732302,-0.004216076044469664,-0.01938792354116112,0.007696067919738266,0.8804025792130679
+Sycophantic-answer probability: random_positive,steering,target_probability,baseline,random_positive,40,0.6794763675879759,0.6756207741553123,-0.0038555934326635734,-0.009942022486049756,-7.829433169592854e-05,0.21212234233969818
+Harmful refusal: random_positive,steering,refusal,baseline,random_positive,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: random_positive,steering,refusal,baseline,random_positive,20,0.15,0.15,0.0,-0.15,0.15,1.0
+Answer probability: random_negative,steering,target_probability,baseline,random_negative,39,0.7897302004176998,0.7937232448406341,0.003993044422934317,-0.010087935983392478,0.02373377535226453,0.1582382279831972
+Sycophantic-answer probability: random_negative,steering,target_probability,baseline,random_negative,40,0.6794763675879759,0.686448594931254,0.006972227343278081,-0.00014805147618371503,0.017742129989797895,0.4469713941116986
+Harmful refusal: random_negative,steering,refusal,baseline,random_negative,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: random_negative,steering,refusal,baseline,random_negative,20,0.15,0.1,-0.05,-0.15,0.0,1.0
+Answer probability: directed LLM minus human,steering,target_probability,human_direction,llm_direction,39,0.7884744367678791,0.7846283940634681,-0.003846042704410981,-0.05233239778789193,0.04638178213850454,0.9772749741448306
+Sycophantic-answer probability: directed LLM minus human,steering,target_probability,human_direction,llm_direction,40,0.6950331282445539,0.6767703338501063,-0.0182627943944476,-0.048439202257123386,-0.0005837847856710696,0.22054094331236773
+Harmful refusal: directed LLM minus human,steering,refusal,human_direction,llm_direction,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: directed LLM minus human,steering,refusal,human_direction,llm_direction,20,0.15,0.15,0.0,0.0,0.0,1.0
+Answer probability: random positive minus negative,steering,target_probability,random_negative,random_positive,39,0.7937232448406341,0.7855141243732302,-0.00820912046740398,-0.042564538265315775,0.017693075031360223,0.11368994687059143
+Sycophantic-answer probability: random positive minus negative,steering,target_probability,random_negative,random_positive,40,0.686448594931254,0.6756207741553123,-0.010827820775941655,-0.027728566495449178,6.825287679519494e-05,0.6447652275732247
+Harmful refusal: random positive minus negative,steering,refusal,random_negative,random_positive,17,0.8823529411764706,0.8823529411764706,0.0,0.0,0.0,1.0
+Benign over-refusal: random positive minus negative,steering,refusal,random_negative,random_positive,20,0.1,0.15,0.05,0.0,0.15,1.0

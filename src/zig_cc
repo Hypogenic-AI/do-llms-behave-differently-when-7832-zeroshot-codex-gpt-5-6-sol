@@ -1,0 +1,10 @@
+#!/bin/bash
+args=()
+for arg in "$@"; do
+  if [[ "$arg" == "-l:libcuda.so.1" ]]; then
+    args+=("/usr/lib/x86_64-linux-gnu/libcuda.so.1")
+  else
+    args+=("$arg")
+  fi
+done
+exec "$(dirname "$0")/../.venv/lib/python3.12/site-packages/ziglang/zig" cc "${args[@]}"

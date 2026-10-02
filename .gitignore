@@ -209,6 +209,13 @@ tempCodeRunnerFile.py
 # PyPI configuration file
 .pypirc
 
+# Local research artifacts too large for version control
+data/
+models/
+cache/
+.uvpython/
+.venv_failed/
+
 # Marimo
 marimo/_static/
 marimo/_lsp/

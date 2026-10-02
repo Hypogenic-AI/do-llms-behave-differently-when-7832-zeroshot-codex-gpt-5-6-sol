@@ -1,0 +1,5 @@
+contrast,experiment,outcome,condition_a,condition_b,n,mean_a,mean_b,delta_b_minus_a,ci_low,ci_high,p_value
+Answer probability,style,target_probability,human,llm,17,0.7869393014038186,0.7647161490895672,-0.02222315231425147,-0.11126371035204877,0.06567560753049774,0.8458847595269364
+Sycophantic-answer probability,style,target_probability,human,llm,9,0.7574855169609217,0.7728936144461235,0.015408097485201703,-0.020183727245949967,0.06283478372006042,0.2734375
+Harmful refusal,style,refusal,human,llm,6,0.8333333333333334,0.8333333333333334,0.0,0.0,0.0,1.0
+Benign over-refusal,style,refusal,human,llm,15,0.2,0.13333333333333333,-0.06666666666666667,-0.2,0.0,1.0
